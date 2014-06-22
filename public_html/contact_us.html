@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Stamford Pulmonary</title>
+<link rel="stylesheet" href="./css/layout.css" type="text/css" />
+<link rel='stylesheet' id='rs-settings-css'  href='css/settings.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-captions-css'  href='css/captions.css' type='text/css' media='all' />
+<link rel="stylesheet" href="./css/main.css" type="text/css" />
+<link rel="stylesheet" href="./css/shortcodes.css" type="text/css" />
+<link rel="stylesheet" href="./css/icons.css" type="text/css" />
+<link rel="stylesheet" href="./css/flexslider.css" type="text/css" />
+<link rel="stylesheet" href="./css/responsive.css" type="text/css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type='text/javascript' src='./js/jquery.themepunch.revolution.min.js'></script>
+</head>
+
+<body class="responsive">
+
+<!-- mobile menu Starts Here-->
+<div id="mobile_navigation">
+  <ul id="mobile_menu" class="mobile_menu">
+   
+    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2586"><a href="contact_us.html">Contact Us</a></li>
+  </ul>
+</div>
+
+<!-- End Mobile Navigation -->
+
+<div id="header_space"></div>
+<header id="header">
+  <section id="main_header_container">
+    <div id="main_navigation">
+      <div class="container">
+        <div class="row-fluid">
+          <div class="row-fluid">
+            <div class="span12"> 
+              
+              <!-- logo -->
+              
+              <div class="logo-container"> <a href="index.html" id="logo" class="clearfix"><img src="images/logo-2.png" alt="Stamford Pulmonary"/></a> </div>
+              <div id="toggle-menu"> <a class="toggle-menu" href="#"><i class="icon-list2"></i></a>
+                <div class="clear"></div>
+              </div>
+              <div id="header-search-button"><a href="#"  class="search-button"><i class="icon-blandes-search"></i></a></div>
+              <ul id="main_menu" class="main_menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2597 current-menu-parent"><a href="index.html">Home</a>
+                </li>
+               
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2586"><a href="contact_us.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- section search -->
+  <section id="header-search-panel">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="search">
+          <div>
+            <form action="#" id="header-search-form" method="get">
+              <a class="close" href="#"><i class="icon-blandes-remove"></i></a>
+              <input type="text"  id="header-search" name="s" value="Search" autocomplete="off" />
+              <!-- Create a fake search button --> 
+              <span class="fake-submit-button"><i class="icon-blandes-search"></i>
+              <input type="submit"  name="submit" value="submit" />
+              </span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<!-- section map -->
+<section class="section full-width section-padding-zero">
+  <div  id="map" class="google_map" style="width:100%;height:500px;"> </div>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+ 
+  <script type="text/javascript">
+	    var latlng = new google.maps.LatLng(41.103830,-74.162552);
+		var MY_MAPTYPE_ID = 'mapid';
+		var myOptions = {
+			zoom: 12,
+			center: latlng,
+			scrollwheel: false,
+			scaleControl: false,
+			disableDefaultUI: true,
+			  mapTypeControl: false,
+		    mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+                 },
+             mapTypeId: MY_MAPTYPE_ID
+			
+		};
+		var map = new google.maps.Map(document.getElementById("map"),
+		myOptions);
+		 
+         var styles = [ 
+		{
+		    "stylers": [
+		      { "hue": "#003bff" },
+		      { "invert_lightness": true },
+		      { "lightness": 10 },
+      		  { "gamma": 0.91 },
+		      { "saturation": -60 }
+		    ]
+		},{
+		    "featureType": "road.local",
+		    "elementType": "labels",
+		    "stylers": [
+		      { "visibility": "off" }
+		    ]
+		},{
+		    "featureType": "landscape",
+		    "stylers": [
+		      { "visibility": "simplified" }
+		    ]
+		},{
+		    "featureType": "poi",
+		    "stylers": [
+		      { "visibility": "off" }
+		    ]
+		},{
+		    "featureType": "road",
+		    "stylers": [
+		      { "saturation": -65 }
+		    ]
+		},{
+		    "featureType": "water",
+		    "stylers": [
+		      { "saturation": -50 },
+		      { "lightness": -25 }
+    		]
+  		},{
+		    "featureType": "road",
+		    "stylers": [
+		      { "gamma": 0.9 }
+		    ]
+		  } 
+		]
+	  
+	
+     var customMapType = new google.maps.StyledMapType(styles);
+	  map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+	  	
+	  var image = {
+        url: 'images/location.png',
+       // This marker is 20 pixels wide by 32 pixels tall.
+       size: new google.maps.Size(60, 60),
+        // The origin for this image is 0,0.
+       origin: new google.maps.Point(0,0),
+      // The anchor for this image is the base of the flagpole at 0,32.
+       anchor: new google.maps.Point(0, 32)
+  };
+  
+    var marker = new google.maps.Marker({
+        map: map,
+	   icon : image
+    });
+
+   var geocoder_map = new google.maps.Geocoder();
+	   var address = '30 Shelburne Rd, Stamford, CT 06902';
+		geocoder_map.geocode( { 'address': address}, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+					map.setCenter(results[0].geometry.location);
+	                marker.setPosition(map.getCenter());
+			 } else {
+				alert("Geocode was not successful for the following reason: " + status);
+			}
+			}); 
+	</script> 
+    
+    
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="widget span4"> <img src="images/logo-20-white.png" width="130" height="20" alt="Stamford-Pulmonary">
+        <div class="gap"></div>
+        <p> All physicians at Pulmonary Associates are board certified in critical care medicine and provide the highest patient centered care for an array of pulmonary conditions </p>
+      </div>
+      <div id="recent-posts-3" class="widget widget_meta widget_recent_entries span4">
+        <h4>Pulmonary Associates of Stamford P.C.</h4>
+        <ul>
+          <li> Phone: 203-348-2437</li>
+          <li> Fax:  203-324-4318 </li>
+        </ul>
+      </div>
+      <div id="recent-posts-3" class="widget widget_meta widget_recent_entries span4">
+        <h4>CT Center for Sleep Medicine</h4>
+        <ul>
+          <li> Phone: 203-276-2300</li>
+          <li> Fax: 203-276-2364</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<section id="copyright">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="row-fluid">
+        <div class="copyright-text span4 pull-left"></div>
+        <div class=" textright span8 clearfix">
+          <ul class="social-icons clearfix">
+            <li> <a  class="twitter" href="http://www.twitter.com/#" target="_blank" title="Twitter"> <i class="icon-twitter"></i> </a> </li>
+            <li> <a  class="flickr" href="#" target="_blank" title="Flickr"> <i class="icon-flickr"></i> </a> </li>
+            <li> <a class="facebook" href="#" target="_blank" title="Facebook"> <i class="icon-facebook"></i> </a> </li>
+            <li> <a class="dribbble" href="#" target="_blank" title="Dribbble"> <i class="icon-dribbble"></i> </a> </li>
+            <li> <a class="linkedin" href="#" target="_blank" title="LinkedIn"> <i class="icon-linkedin"></i> </a> </li>
+            <li> <a class="youtube" href="#" target="_blank" title="YouTube"> <i class="icon-youtube"></i> </a> </li>
+            <li> <a class="rss" href="http://localhost/lautus/?feed=rss2" target="_blank" title="RSS"> <i class="icon-rss"></i> </a> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Javascript Files --> 
+<script type="text/javascript" src="./js/plugins.js"></script> 
+<script type="text/javascript" src="./js/caroufred.js"></script> 
+<script type="text/javascript" src="./js/flexslider.js"></script> 
+<script type="text/javascript" src="./js/isotope.js"></script> 
+<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>
