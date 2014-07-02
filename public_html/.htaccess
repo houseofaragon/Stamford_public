@@ -1,1 +1,8 @@
 DirectoryIndex index.html index.php parking-page.html
+<IfModule mod_security.c>
+	# Turn off mod_security filtering.  SMF is a big boy, it does not need its hands held.
+	SecFilterEngine Off
+
+	# The below probably isn't needed, but better safe than sorry.
+	SecFilterScanPOST Off
+</IfModule>
